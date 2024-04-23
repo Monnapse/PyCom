@@ -3,7 +3,7 @@
     Made by Monnapse
     Create terminal commands the easiest way.
 
-    0.2.0
+    0.4.1
 """
 
 import sys
