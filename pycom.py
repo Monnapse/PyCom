@@ -48,7 +48,6 @@ def r_cmd(args):
         if f.__name__ == function_name:
             new_args = []
             param_dict = inspect.signature(f).parameters
-
             has_eqaul = False
 
             for arg in arguments:
