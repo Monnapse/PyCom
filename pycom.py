@@ -41,7 +41,7 @@ def r_cmd(args):
         else:
             arg_list = arg.split("=")
             if len(arg_list) == 1:
-                arg_list.insert(0, NoneType())
+                arg_list.insert(0, None)
             arguments.append(arg_list)
 
     for f in commands:
@@ -57,7 +57,7 @@ def r_cmd(args):
 
                 assigner = False
 
-                if arg_name:
+                if arg_name != None:
                     has_eqaul = True
 
                     index = get_param_pos(arg_name, param_dict)
