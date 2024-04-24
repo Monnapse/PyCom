@@ -3,11 +3,12 @@
     Made by Monnapse
     Create terminal commands the easiest way.
 
-    0.4.1
+    0.4.2
 """
 
 import sys
 import inspect
+import cmd
 
 commands = []
 
@@ -18,12 +19,21 @@ class NoneType:
 def command(function):
     commands.append(function)
 
-def get_param_pos(param_str, param_dict):
+def get_param_pos(param_str: str, param_dict):
     index = 0
     for param in param_dict:
         if param == param_str:
             return index
         index += 1
+
+#def assign_arg_type():
+
+def get_param_value_by_index(index: int, param_dict):
+    i = 0
+    for param in param_dict.values():
+        if i == index:
+            return param.default
+        i += 1
 
 def error(msg: str):
     print(f"Lime Encountered and error: {msg}")
@@ -71,7 +81,9 @@ def r_cmd(args):
                     except:
                         differrence = index - len(new_args)
                         for i in range(differrence):
-                            new_args.append(NoneType())
+                            #print(get_param_value_by_index(len(new_args)+i-1, param_dict))
+                            #new_args.append(NoneType())
+                            new_args.append(get_param_value_by_index(len(new_args)+i-1, param_dict))
 
                 elif not arg_name and has_eqaul:
                     error(f"If you assign parameter you must end with assign")
