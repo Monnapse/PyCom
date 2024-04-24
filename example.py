@@ -1,7 +1,7 @@
 import pycom
 
 @pycom.command
-def test(msg1:str, msg2: str="HELLO WORLD", msg3:str = "WHAT", uppercase:bool=False, lowercase:bool=False):
+def test(msg1:str = "FIRST one Ok", msg2: str="HELLO WORLD", msg3:str = "WHAT", uppercase:bool=False, lowercase:bool=False):
     if uppercase:
         print(f"msg1: {str.upper(str(msg1))}")
         print(f"msg2: {str.upper(str(msg2))}")

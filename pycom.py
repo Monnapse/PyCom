@@ -3,7 +3,7 @@
     Made by Monnapse
     Create terminal commands the easiest way.
 
-    0.4.2
+    0.4.3
 """
 
 import sys
@@ -83,7 +83,7 @@ def r_cmd(args):
                         for i in range(differrence):
                             #print(get_param_value_by_index(len(new_args)+i-1, param_dict))
                             #new_args.append(NoneType())
-                            new_args.append(get_param_value_by_index(len(new_args)+i-1, param_dict))
+                            new_args.append(get_param_value_by_index(len(new_args)+i, param_dict))
 
                 elif not arg_name and has_eqaul:
                     error(f"If you assign parameter you must end with assign")
